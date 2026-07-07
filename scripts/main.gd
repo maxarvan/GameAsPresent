@@ -149,6 +149,15 @@ func _on_answer_pressed(index: int) -> void:
 		score += 1
 		_update_score_label()
 
+	var answer_photo_filename: String = q.get("answer_photo", "")
+	if not answer_photo_filename.is_empty():
+		photo_rect.texture = null
+		photo_rect.visible = true
+		if OS.has_feature("web"):
+			photo_request.request(base_url + answer_photo_filename)
+		else:
+			_load_photo_from_bytes(FileAccess.get_file_as_bytes("res://data/" + answer_photo_filename))
+
 	next_button.text = "Next" if current_index < questions.size() - 1 else "Finish"
 	next_button.visible = true
 
