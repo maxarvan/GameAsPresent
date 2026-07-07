@@ -4,6 +4,9 @@ const COLOR_CORRECT := Color(0.20, 0.65, 0.30)
 const COLOR_WRONG := Color(0.70, 0.20, 0.20)
 
 @onready var score_label: Label = $ScoreLabel
+@onready var name_label: Label = $Content/VBoxContainer/NameLabel
+@onready var name_input: LineEdit = $Content/VBoxContainer/NameInput
+@onready var start_button: Button = $Content/VBoxContainer/StartButton
 @onready var photo_rect: TextureRect = $Content/VBoxContainer/PhotoRect
 @onready var question_label: Label = $Content/VBoxContainer/QuestionLabel
 @onready var answers_grid: GridContainer = $Content/VBoxContainer/AnswersGrid
@@ -24,6 +27,7 @@ var current_index: int = 0
 var score: int = 0
 var answered: bool = false
 var quiz_finished: bool = false
+var player_name: String = ""
 
 
 func _ready() -> void:
@@ -55,6 +59,33 @@ func _load_quiz_from_bytes(bytes: PackedByteArray) -> void:
 		push_error("quiz.json is not valid")
 		return
 	questions = parsed["questions"]
+	_show_name_entry()
+
+
+func _show_name_entry() -> void:
+	score_label.visible = false
+	photo_rect.visible = false
+	question_label.visible = false
+	answers_grid.visible = false
+	result_label.visible = false
+	next_button.visible = false
+	name_input.text = player_name
+	name_label.visible = true
+	name_input.visible = true
+	start_button.visible = true
+	name_input.grab_focus()
+
+
+func _on_name_submitted(_new_text: String) -> void:
+	_on_start_button_pressed()
+
+
+func _on_start_button_pressed() -> void:
+	player_name = name_input.text.strip_edges()
+	name_label.visible = false
+	name_input.visible = false
+	start_button.visible = false
+	score_label.visible = true
 	_start_quiz()
 
 
@@ -124,7 +155,7 @@ func _on_answer_pressed(index: int) -> void:
 
 func _on_next_button_pressed() -> void:
 	if quiz_finished:
-		_start_quiz()
+		_show_name_entry()
 		return
 	if current_index < questions.size() - 1:
 		current_index += 1
@@ -138,7 +169,8 @@ func _show_final_score() -> void:
 	question_label.visible = false
 	answers_grid.visible = false
 	photo_rect.visible = false
-	result_label.text = "Score: %d / %d" % [score, questions.size()]
+	var name_prefix: String = player_name + ": " if not player_name.is_empty() else ""
+	result_label.text = "%sScore: %d / %d" % [name_prefix, score, questions.size()]
 	result_label.visible = true
 	next_button.text = "Restart"
 	next_button.visible = true
