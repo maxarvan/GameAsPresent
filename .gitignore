@@ -1,0 +1,10 @@
+# Godot 4+ specific ignores
+.godot/
+*.translation
+
+# Local export/build output
+/builds/
+/export/
+
+# Import cache (regenerated automatically)
+*.import
