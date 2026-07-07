@@ -21,37 +21,58 @@ grow_vertical = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
 layout_mode = 2
+theme_override_constants/separation = 24
 alignment = 1
+
+[node name="PhotoRect" type="TextureRect" parent="CenterContainer/VBoxContainer"]
+custom_minimum_size = Vector2(320, 320)
+layout_mode = 2
+size_flags_horizontal = 4
+expand_mode = 1
+stretch_mode = 5
 
 [node name="QuestionLabel" type="Label" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 28
 horizontal_alignment = 1
 text = "How much is 2+2?"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_constants/separation = 24
 alignment = 1
 
-[node name="Button4" type="Button" parent="CenterContainer/VBoxContainer/HBoxContainer"]
+[node name="RightButton" type="Button" parent="CenterContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(220, 96)
 layout_mode = 2
+theme_override_font_sizes/font_size = 28
 text = "4"
 
-[node name="Button5" type="Button" parent="CenterContainer/VBoxContainer/HBoxContainer"]
+[node name="WrongButton" type="Button" parent="CenterContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(220, 96)
 layout_mode = 2
+theme_override_font_sizes/font_size = 28
 text = "5"
 
 [node name="ResultLabel" type="Label" parent="CenterContainer/VBoxContainer"]
 visible = false
 layout_mode = 2
+theme_override_font_sizes/font_size = 28
 horizontal_alignment = 1
 text = ""
 
 [node name="RestartButton" type="Button" parent="CenterContainer/VBoxContainer"]
 visible = false
+custom_minimum_size = Vector2(220, 96)
 layout_mode = 2
+theme_override_font_sizes/font_size = 28
 size_flags_horizontal = 4
 text = "Restart"
 
-[connection signal="pressed" from="CenterContainer/VBoxContainer/HBoxContainer/Button4" to="." method="_on_button_4_pressed"]
-[connection signal="pressed" from="CenterContainer/VBoxContainer/HBoxContainer/Button5" to="." method="_on_button_5_pressed"]
+[node name="QuizRequest" type="HTTPRequest" parent="."]
+
+[node name="PhotoRequest" type="HTTPRequest" parent="."]
+
+[connection signal="pressed" from="CenterContainer/VBoxContainer/HBoxContainer/RightButton" to="." method="_on_right_button_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/HBoxContainer/WrongButton" to="." method="_on_wrong_button_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]
