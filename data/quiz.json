@@ -17,14 +17,14 @@
 	{
       "photo": "Mallorca2026/3_Q.png",
       "answer_photo": "Mallorca2026/3_A.png",
-      "question": "What BMW bodystyle Vitalik owns?",
+      "question": "Which BMW bodystyle Vitalik owns?",
       "answers": ["E46", "E36", "E39", "E69"],
       "correct_answer": "E46"
     },
 	{
       "photo": "Mallorca2026/4_Q.png",
       "answer_photo": "Mallorca2026/4_A.png",
-      "question": "What were this croquettes made of?",
+      "question": "What were these croquettes made of?",
       "answers": ["Duck", "Beef", "Chicken", "Turkey"],
       "correct_answer": "Duck"
     },

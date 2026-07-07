@@ -22,6 +22,7 @@ const COLOR_WRONG := Color(0.70, 0.20, 0.20)
 @onready var photo_request: HTTPRequest = $PhotoRequest
 
 var base_url: String = ""
+var cache_buster: String = ""
 var questions: Array = []
 var current_index: int = 0
 var score: int = 0
@@ -38,7 +39,8 @@ func _ready() -> void:
 
 	if OS.has_feature("web"):
 		base_url = JavaScriptBridge.eval("window.location.href.replace(/[^/]*$/, '')", true)
-		quiz_request.request(base_url + "quiz.json")
+		cache_buster = "?_cb=" + str(Time.get_unix_time_from_system())
+		quiz_request.request(base_url + "quiz.json" + cache_buster)
 	else:
 		_load_quiz_from_bytes(FileAccess.get_file_as_bytes("res://data/quiz.json"))
 
@@ -112,7 +114,7 @@ func _show_question(index: int) -> void:
 	photo_rect.visible = not photo_filename.is_empty()
 	if not photo_filename.is_empty():
 		if OS.has_feature("web"):
-			photo_request.request(base_url + photo_filename)
+			photo_request.request(base_url + photo_filename + cache_buster)
 		else:
 			_load_photo_from_bytes(FileAccess.get_file_as_bytes("res://data/" + photo_filename))
 
@@ -154,7 +156,7 @@ func _on_answer_pressed(index: int) -> void:
 		photo_rect.texture = null
 		photo_rect.visible = true
 		if OS.has_feature("web"):
-			photo_request.request(base_url + answer_photo_filename)
+			photo_request.request(base_url + answer_photo_filename + cache_buster)
 		else:
 			_load_photo_from_bytes(FileAccess.get_file_as_bytes("res://data/" + answer_photo_filename))
 
