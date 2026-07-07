@@ -192,12 +192,17 @@ func _on_photo_loaded(_result: int, response_code: int, _headers: PackedStringAr
 	_load_photo_from_bytes(body)
 
 
+const PNG_SIGNATURE: PackedByteArray = [0x89, 0x50, 0x4E, 0x47]
+
+
 func _load_photo_from_bytes(bytes: PackedByteArray) -> void:
 	if bytes.is_empty():
 		push_error("Photo file is empty or missing")
 		return
 	var image := Image.new()
-	if image.load_jpg_from_buffer(bytes) != OK:
+	var is_png: bool = bytes.size() >= 4 and bytes.slice(0, 4) == PNG_SIGNATURE
+	var err: int = image.load_png_from_buffer(bytes) if is_png else image.load_jpg_from_buffer(bytes)
+	if err != OK:
 		push_error("Could not decode photo")
 		return
 	photo_rect.texture = ImageTexture.create_from_image(image)
