@@ -1,8 +1,8 @@
 {
   "photo": "photo.jpg",
-  "question": "How much is 2+2?",
-  "right_answer": "4",
-  "wrong_answer": "5",
-  "right_message": "You won!",
-  "wrong_message": "You lost!"
+  "question": "Кто это?",
+  "right_answer": "Макс",
+  "wrong_answer": "Не Макс",
+  "right_message": "Пральна!",
+  "wrong_message": "Не пральна!"
 }
