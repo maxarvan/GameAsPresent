@@ -6,13 +6,9 @@ New-Item -ItemType Directory -Force -Path (Join-Path $projectRoot "builds\web") 
 
 & $godot --headless --export-release "Web" "builds/web/index.html"
 
-Copy-Item (Join-Path $projectRoot "data\quiz.json") (Join-Path $projectRoot "builds\web\quiz.json") -Force
-
-$photoPath = Join-Path $projectRoot "data\photo.jpg"
-if (Test-Path $photoPath) {
-    Copy-Item $photoPath (Join-Path $projectRoot "builds\web\photo.jpg") -Force
-} else {
-    Write-Warning "data/photo.jpg not found - the game will run without a photo until you add one."
+$webDir = Join-Path $projectRoot "builds\web"
+Get-ChildItem (Join-Path $projectRoot "data") -File | Where-Object { $_.Name -ne ".gdignore" } | ForEach-Object {
+    Copy-Item $_.FullName (Join-Path $webDir $_.Name) -Force
 }
 
 Write-Host "Exported to builds/web with data files copied. Preview with tools/serve.ps1."

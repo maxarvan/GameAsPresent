@@ -2,73 +2,17 @@
   "questions": [
     {
       "photo": "photo.jpg",
-      "answer_photo": "photo.jpg",
+      "answer_photo": "photo2.jpg",
       "question": "Столица Франции?",
       "answers": ["Париж", "Лондон", "Берлин", "Мадрид"],
       "correct_answer": "Париж"
     },
     {
       "photo": "photo.jpg",
-      "answer_photo": "",
+      "answer_photo": "photo2.jpg",
       "question": "Сколько дней в високосном году?",
       "answers": ["366", "365", "360", "364"],
       "correct_answer": "366"
-    },
-    {
-      "photo": "photo.jpg",
-      "answer_photo": "",
-      "question": "Самая большая планета Солнечной системы?",
-      "answers": ["Юпитер", "Сатурн", "Земля", "Марс"],
-      "correct_answer": "Юпитер"
-    },
-    {
-      "photo": "photo.jpg",
-      "answer_photo": "",
-      "question": "Кто написал \"Войну и мир\"?",
-      "answers": ["Лев Толстой", "Фёдор Достоевский", "Антон Чехов", "Иван Тургенев"],
-      "correct_answer": "Лев Толстой"
-    },
-    {
-      "photo": "photo.jpg",
-      "answer_photo": "",
-      "question": "Сколько континентов на Земле?",
-      "answers": ["7", "5", "6", "8"],
-      "correct_answer": "7"
-    },
-    {
-      "photo": "photo.jpg",
-      "answer_photo": "",
-      "question": "Химический символ золота?",
-      "answers": ["Au", "Ag", "Fe", "Pb"],
-      "correct_answer": "Au"
-    },
-    {
-      "photo": "photo.jpg",
-      "answer_photo": "",
-      "question": "В каком году началась Вторая мировая война?",
-      "answers": ["1939", "1914", "1945", "1941"],
-      "correct_answer": "1939"
-    },
-    {
-      "photo": "photo.jpg",
-      "answer_photo": "",
-      "question": "Сколько сторон у шестиугольника?",
-      "answers": ["6", "5", "7", "8"],
-      "correct_answer": "6"
-    },
-    {
-      "photo": "photo.jpg",
-      "answer_photo": "",
-      "question": "Какое животное самое быстрое на суше?",
-      "answers": ["Гепард", "Лев", "Лошадь", "Антилопа"],
-      "correct_answer": "Гепард"
-    },
-    {
-      "photo": "photo.jpg",
-      "answer_photo": "",
-      "question": "Столица Японии?",
-      "answers": ["Токио", "Осака", "Киото", "Йокогама"],
-      "correct_answer": "Токио"
     }
   ]
 }

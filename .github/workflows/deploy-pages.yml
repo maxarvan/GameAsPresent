@@ -37,7 +37,7 @@ jobs:
         run: |
           mkdir -v -p build/web
           godot --headless --export-release "Web" build/web/index.html
-          cp data/quiz.json data/photo.jpg build/web/
+          find data -maxdepth 1 -type f ! -name '.gdignore' -exec cp {} build/web/ \;
 
       - uses: actions/upload-pages-artifact@v3
         with:
