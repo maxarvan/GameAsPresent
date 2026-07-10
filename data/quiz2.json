@@ -1,0 +1,73 @@
+{
+  "questions": [
+    {
+      "photo": "Mallorca2026/1_Q.png",
+      "answer_photo": "Mallorca2026/1_A.png",
+      "question": "How old is Fatboy Slim?",
+      "answers": ["59", "60", "61", "62"],
+      "correct_answer": "62"
+    },
+    {
+      "answer_photo": "Mallorca2026/2_A.png",
+      "question": "In which room lived Max and Yana?",
+      "answers": ["5", "8", "9", "69"],
+      "correct_answer": "9"
+    },
+	{
+      "photo": "Mallorca2026/3_Q.png",
+      "answer_photo": "Mallorca2026/3_A.png",
+      "question": "Which BMW bodystyle Vitalik owns?",
+      "answers": ["E46", "E36", "E39", "E69"],
+      "correct_answer": "E46"
+    },
+	{
+      "photo": "Mallorca2026/4_Q.png",
+      "answer_photo": "Mallorca2026/4_A.png",
+      "question": "What were these croquettes made of?",
+      "answers": ["Duck", "Beef", "Chicken", "Turkey"],
+      "correct_answer": "Duck"
+    },
+	{
+      "photo": "",
+      "answer_photo": "",
+      "question": "What was the taste of \"the fallen milkshake\" from the beach club?",
+      "answers": ["Chocolate", "Vanilla", "Creme-Brulee", "Taste of Victory"],
+      "correct_answer": "Vanilla"
+    },
+	{
+      "photo": "",
+      "answer_photo": "Mallorca2026/6_A.png",
+      "question": "What song Ayham and Sveta sang on the way back from the concert?",
+      "answers": ["Belle", "Single ladies", "Whats my age again", "We are the champions"],
+      "correct_answer": "Belle"
+    },
+	{
+      "photo": "",
+      "answer_photo": "Mallorca2026/7_A.png",
+      "question": "What is the proper way to eat okroshka (In my opinion obviously, since I've created this quiz)?",
+      "answers": ["With kvas", "With kefir", "With mineral water", "I don't eat okroshka"],
+      "correct_answer": "With kvas"
+    },
+	{
+      "photo": "",
+      "answer_photo": "Mallorca2026/8_A.jpg",
+      "question": "Eat. Sleep. Rave....",
+      "answers": ["Repeat", "Sniff", "Dave", "Beep Beep"],
+      "correct_answer": "Repeat"
+    },
+	{
+      "photo": "",
+      "answer_photo": "Mallorca2026/9_A.png",
+      "question": "How high was Max while giving the speech on the wedding?",
+      "answers": ["73%", "69%", "15%", "45%"],
+      "correct_answer": "73%"
+    },
+	{
+      "photo": "",
+      "answer_photo": "Mallorca2026/10_A.jpg",
+      "question": "How awesome was this week?",
+      "answers": ["100%", "69%", "10%", "45%"],
+      "correct_answer": "100%"
+    }
+  ]
+}
